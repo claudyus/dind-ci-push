@@ -2,6 +2,6 @@ FROM alpine:latest
 
 RUN apk add --update openssh-client git && rm -rf /var/cache/apk/*
 
-COPY config.sh /ssh
+COPY config.sh /ssh/config.sh
 
 CMD ["ssh-agent"]

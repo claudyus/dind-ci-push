@@ -19,3 +19,4 @@ Here some example, assuming gitlab-ci::
 The configuration script will use the following env variables::
 
  * SSH_PRIVATE_KEY: The private ssh key to use
+ * KNOW_HOSTS_LINE: (optional) The public key for the host, if not set host key checking will be disabled. To generate the correct know_hosts line use ```ssh-keyscan -t rsa -H <hostname_of_remote>```
