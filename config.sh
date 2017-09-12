@@ -1,8 +1,12 @@
 #!/bin/bash
 
-eval $(ssh-agent -s)
-
-ssh-add <(echo "$SSH_PRIVATE_KEY")
+if [[ -n "$SSH_PRIVATE_KEY" ]]; then
+    echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    chmod 600 ~/.ssh/id_rsa
+else
+    echo "ERROR: Missing private key in env"
+    exit 1
+fi
 
 # set or ignore know_hosts file
 mkdir -p ~/.ssh
