@@ -2,7 +2,7 @@
 
 eval $(ssh-agent -s)
 
-ssh-add <(echo $SSH_PRIVATE_KEY)
+ssh-add <(echo "$SSH_PRIVATE_KEY")
 
 # set or ignore know_hosts file
 mkdir -p ~/.ssh
