@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir -p ~/.ssh
 if [[ -n "$SSH_PRIVATE_KEY" ]]; then
     echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
     chmod 600 ~/.ssh/id_rsa
@@ -9,7 +10,6 @@ else
 fi
 
 # set or ignore know_hosts file
-mkdir -p ~/.ssh
 if [[ -n "$KNOW_HOSTS_LINE" ]]; then
   echo $KNOW_HOSTS_LINE > ~/.ssh/known_hosts
 else
